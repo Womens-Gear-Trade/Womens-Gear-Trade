@@ -8,7 +8,6 @@ async function createMessage({ postId, creatorId, content }) {
       `
           INSERT INTO messages ("postId", "creatorId", content)
           VALUES ($1, $2, $3)
-          ON CONFLICT (username, email) DO NOTHING
           RETURNING *;
           `,
       [postId, creatorId, content]
@@ -52,9 +51,10 @@ async function getMessageByPostId(postId) {
   try {
     const { rows: message } = await client.query(
       `
-      SELECT *
+      SELECT messages.*
       FROM messages
-      WHERE postId = ${postId};
+      JOIN gearPosts ON messages."postId" = gearPosts.id
+      WHERE messages."postId" = ${postId};
       `
     );
     return message;
@@ -67,9 +67,10 @@ async function getMessageByCreatorId(creatorId) {
   try {
     const { rows: message } = await client.query(
       `
-        SELECT *
+        SELECT messages.*
         FROM messages
-        WHERE creatorId = ${creatorId};
+        JOIN users ON messages."creatorId" = users.id
+        WHERE messages."creatorId" = ${creatorId};
         `
     );
     return message;
@@ -125,5 +126,6 @@ module.exports = {
   getMessageById,
   getMessageByPostId,
   getMessageByCreatorId,
+  getMessageByActive,
   attachMessageToGearPost,
 };
