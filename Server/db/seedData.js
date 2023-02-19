@@ -1,7 +1,15 @@
 const client = require('./client');
 require('dotenv').config();
 
-const { createUser } = require('./users');
+const {
+  createUser,
+  getUser,
+  getAllUsers,
+  getUserByEmail,
+  getUserById,
+  getUserByUsername,
+  updateUser,
+} = require('./users');
 
 async function dropTables() {
   try {
@@ -31,6 +39,7 @@ async function createTables() {
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
+        address VARCHAR(255) NOT NULL,
         username VARCHAR(255) NOT NULL,
         password VARCHAR(255) NOT NULL,
         UNIQUE (username, email)
@@ -90,12 +99,14 @@ async function createFakeUsers() {
       {
         name: 'Ashley Hoath',
         email: 'ashley@gmail.com',
+        address: '3103 Great Neck Ct.',
         username: 'ashley1',
         password: 'ashley123',
       },
       {
         name: 'Megan Miller',
         email: 'megan@gmail.com',
+        address: '6102 Fun Day Lane',
         username: 'megan1',
         password: 'megan123',
       },
@@ -113,6 +124,32 @@ async function createFakeUsers() {
 async function testDB() {
   try {
     console.log('testing database!');
+
+    const userByUsername = await getUserByUsername('ashley1');
+    console.log('testing getUserByUsername', userByUsername);
+
+    const allUsers = await getAllUsers();
+    console.log('These are all the users!', allUsers);
+
+    const userById = await getUserById(1);
+    console.log('testing getUserById', userById);
+
+    const userByUser = await getUser('ashley1', 'ashley123');
+    console.log('testing getUser', userByUser);
+
+    const userByEmail = await getUserByEmail('ashley@gmail.com');
+    console.log('testing getUserByemail', userByEmail);
+
+    const updatedUser = await updateUser(
+      1,
+      'sandy',
+      'sandy@gmail.com',
+      '2145 Happy Life Way',
+      'rockstar',
+      'lemons!'
+    );
+    console.log('testing updateUsers', updatedUser);
+
     console.log('finished testing database!');
   } catch (error) {
     console.log('error testing db');
