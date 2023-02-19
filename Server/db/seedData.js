@@ -10,6 +10,16 @@ const {
   getUserByUsername,
   updateUser,
 } = require('./users');
+const {
+  createGearPost,
+  getAllGearPosts,
+  getGearPostByUser,
+  getGearPostById,
+  getGearPostByDate,
+  getGearPostsByName,
+  getGearPostByActive,
+  updateGearPosts,
+} = require('./gearPosts');
 
 async function dropTables() {
   try {
@@ -54,17 +64,17 @@ async function createTables() {
         condition VARCHAR(255),
         category VARCHAR(255),
         size VARCHAR(255),
-        willDeliver BOOLEAN DEFAULT false,
-        "authorID" INTEGER REFERENCES users(id),
+        willdeliver BOOLEAN DEFAULT false,
+        "authorId" INTEGER REFERENCES users(id),
         createdAt DATE,
-        updatedAt DATE,
+        updatedat DATE DEFAULT null,
         active BOOLEAN DEFAULT true
       );
 
       CREATE TABLE messages (
         id SERIAL PRIMARY KEY,
-        "postID" INTEGER REFERENCES gearPosts(id),
-        "creatorID" INTEGER REFERENCES users(id),
+        "postId" INTEGER REFERENCES gearPosts(id),
+        "creatorId" INTEGER REFERENCES users(id),
         content TEXT,
         active BOOLEAN DEFAULT true
       );
@@ -80,8 +90,8 @@ async function createTables() {
 
       CREATE TABLE userRoles (
         id SERIAL PRIMARY KEY,
-        "userID" INTEGER REFERENCES users(id),
-        "roleID" INTEGER REFERENCES roles(id)
+        "userId" INTEGER REFERENCES users(id),
+        "roleId" INTEGER REFERENCES roles(id)
       );
       `);
 
@@ -121,9 +131,36 @@ async function createFakeUsers() {
   }
 }
 
+async function createFakeGearPost() {
+  try {
+    const fakePost = [
+      {
+        title: 'Old Hoodie',
+        location: 'fort collins',
+        description: 'old comfy green',
+        price: 5.0,
+        condition: 'so old',
+        category: 'apparel',
+        size: 'M',
+        authorId: 1,
+        createdAt: '2023-02-19',
+      },
+    ];
+    const fakePosts = await Promise.all(fakePost.map(createGearPost));
+    console.log('gearPosts created:');
+    console.log(fakePosts);
+    console.log('Finished creating gearPosts!');
+  } catch (error) {
+    console.error('Error creating gearPosts!');
+    throw error;
+  }
+}
+
 async function testDB() {
   try {
     console.log('testing database!');
+
+    // *******************USER TESTS******************//
 
     const userByUsername = await getUserByUsername('ashley1');
     console.log('testing getUserByUsername', userByUsername);
@@ -150,6 +187,43 @@ async function testDB() {
     );
     console.log('testing updateUsers', updatedUser);
 
+    //*******************gearPosts TESTS******************//
+
+    console.log('starting to test gearPosts');
+    const allGearPosts = await getAllGearPosts();
+    console.log('testing getAllGearPosts', allGearPosts);
+
+    const gearPostsByUser = await getGearPostByUser(2);
+    console.log('testing getGearPostsByUser', gearPostsByUser);
+
+    const gearPostById = await getGearPostById(1);
+    console.log('testing getGearPostById', gearPostById);
+
+    const gearPostsByDate = await getGearPostByDate('2023-02-05');
+    console.log('testing getGearPostsByDate', gearPostsByDate);
+
+    const gearPostByName = await getGearPostsByName('Old Hoodie');
+    console.log('testing getGearPostByName', gearPostByName);
+
+    const gearPostByActive = await getGearPostByActive(true);
+    console.log('testing getGearPostByActive', gearPostByActive);
+
+    const gearByUser = await getGearPostByUser(1);
+    console.log('testing getGearPostByUSer', gearByUser);
+
+    const updatedGearPost = await updateGearPosts(allGearPosts[0].id, {
+      title: 'Old shoes',
+      location: 'longmont',
+      description: 'running shoes',
+      price: 10.0,
+      condition: 'new',
+      category: 'shoes',
+      size: '8',
+      updatedat: '2023-02-20',
+      active: false,
+    });
+    console.log('testing update gear post at index 0', updatedGearPost);
+
     console.log('finished testing database!');
   } catch (error) {
     console.log('error testing db');
@@ -162,6 +236,7 @@ async function rebuildDB() {
     await dropTables();
     await createTables();
     await createFakeUsers();
+    await createFakeGearPost();
     await testDB();
   } catch (error) {
     console.log('Error during rebuildDB');
