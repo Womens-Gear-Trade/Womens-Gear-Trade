@@ -21,6 +21,16 @@ const {
   updateGearPosts,
 } = require('./gearPosts');
 
+const {
+  createMessage,
+  getAllMessages,
+  getMessageById,
+  getMessageByPostId,
+  getMessageByCreatorId,
+  getMessageByActive,
+  attachMessageToGearPost,
+} = require('./messages');
+
 async function dropTables() {
   try {
     console.log('Dropping All Tables!..');
@@ -156,6 +166,30 @@ async function createFakeGearPost() {
   }
 }
 
+async function createFakeMessages() {
+  try {
+    const fakeMessage = [
+      {
+        postId: 1,
+        creatorId: 1,
+        content: 'Very cool old hoodie I would like',
+      },
+      {
+        postId: 1,
+        creatorId: 2,
+        content: 'No I would like the old hoodie',
+      },
+    ];
+    const fakeMessages = await Promise.all(fakeMessage.map(createMessage));
+    console.log('messages created:');
+    console.log(fakeMessages);
+    console.log('Finished creating messages!');
+  } catch (error) {
+    console.error('Error creating messages!');
+    throw error;
+  }
+}
+
 async function testDB() {
   try {
     console.log('testing database!');
@@ -177,15 +211,15 @@ async function testDB() {
     const userByEmail = await getUserByEmail('ashley@gmail.com');
     console.log('testing getUserByemail', userByEmail);
 
-    const updatedUser = await updateUser(
-      1,
-      'sandy',
-      'sandy@gmail.com',
-      '2145 Happy Life Way',
-      'rockstar',
-      'lemons!'
-    );
-    console.log('testing updateUsers', updatedUser);
+    // const updatedUser = await updateUser(
+    //   1,
+    //   'sandy',
+    //   'sandy@gmail.com',
+    //   '2145 Happy Life Way',
+    //   'rockstar',
+    //   'lemons!'
+    // );
+    // console.log('testing updateUsers', updatedUser);
 
     //*******************gearPosts TESTS******************//
 
@@ -211,18 +245,41 @@ async function testDB() {
     const gearByUser = await getGearPostByUser(1);
     console.log('testing getGearPostByUSer', gearByUser);
 
-    const updatedGearPost = await updateGearPosts(allGearPosts[0].id, {
-      title: 'Old shoes',
-      location: 'longmont',
-      description: 'running shoes',
-      price: 10.0,
-      condition: 'new',
-      category: 'shoes',
-      size: '8',
-      updatedat: '2023-02-20',
-      active: false,
-    });
-    console.log('testing update gear post at index 0', updatedGearPost);
+    // const updatedGearPost = await updateGearPosts(allGearPosts[0].id, {
+    //   title: 'Old shoes',
+    //   location: 'longmont',
+    //   description: 'running shoes',
+    //   price: 10.0,
+    //   condition: 'new',
+    //   category: 'shoes',
+    //   size: '8',
+    //   updatedat: '2023-02-20',
+    //   active: false,
+    // });
+    // console.log('testing update gear post at index 0', updatedGearPost);
+
+    //******************* MESSAGES TESTS******************//
+    const allMessages = await getAllMessages();
+    console.log('testing getAllMessages', allMessages);
+
+    const messageById = await getMessageById(2);
+    console.log('testing getMessageById', messageById);
+
+    const messageByPostId = await getMessageByPostId(1);
+    console.log('testing getMessageByPostId', messageByPostId);
+
+    const messageByCreatorId = await getMessageByCreatorId(1);
+    console.log('testing getMessageByCreatorId', messageByCreatorId);
+
+    const messageByActive = await getMessageByActive(true);
+    console.log('testing getMessageByActive', messageByActive);
+
+    const attachMessageToGear = await attachMessageToGearPost(allGearPosts);
+    console.log('testing attach message to gear post:', attachMessageToGear);
+    console.log(
+      'these are all the gear posts w messages attached',
+      attachMessageToGear[0]
+    );
 
     console.log('finished testing database!');
   } catch (error) {
@@ -237,6 +294,7 @@ async function rebuildDB() {
     await createTables();
     await createFakeUsers();
     await createFakeGearPost();
+    await createFakeMessages();
     await testDB();
   } catch (error) {
     console.log('Error during rebuildDB');
