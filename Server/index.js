@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const server = require('./Server/app');
+const server = require('./app');
 // const app = require('app');
 const PORT = process.env['PORT'] ?? 8080;
 // const server = http.createServer(app);
