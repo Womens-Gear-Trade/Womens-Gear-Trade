@@ -31,6 +31,19 @@ const {
   attachMessageToGearPost,
 } = require('./messages');
 
+const {
+  createRoles,
+  getAllRoles,
+  getRoleById,
+  getRoleByCode,
+  getRoleByName,
+  getRoleByActive,
+  getUserByRoleId,
+  getRoleIdByUserId,
+} = require('./roles');
+
+const { createUserRoles, getAllUserRoles } = require('./userRoles');
+
 async function dropTables() {
   try {
     console.log('Dropping All Tables!..');
@@ -190,6 +203,54 @@ async function createFakeMessages() {
   }
 }
 
+async function createFakeRoles() {
+  try {
+    const fakeRole = [
+      {
+        roleName: 'admin',
+        roleCode: 2,
+        description: 'admin can change stuff',
+        createdOn: '2023-02-19',
+      },
+      {
+        roleName: 'user',
+        roleCode: 1,
+        description: 'user sells and trades',
+        createdOn: '2023-02-19',
+      },
+    ];
+    const fakeRoles = await Promise.all(fakeRole.map(createRoles));
+    console.log('roles created:');
+    console.log(fakeRoles);
+    console.log('Finished creating roles!');
+  } catch (error) {
+    console.error('Error creating roles!');
+    throw error;
+  }
+}
+
+async function createFakeUserRoles() {
+  try {
+    const fakeUserRole = [
+      {
+        userId: 1,
+        roleId: 2,
+      },
+      {
+        userId: 2,
+        roleId: 1,
+      },
+    ];
+    const fakeUserRoles = await Promise.all(fakeUserRole.map(createUserRoles));
+    console.log('user roles created:');
+    console.log(fakeUserRoles);
+    console.log('Finished creating user roles!');
+  } catch (error) {
+    console.error('Error creating user roles!');
+    throw error;
+  }
+}
+
 async function testDB() {
   try {
     console.log('testing database!');
@@ -281,6 +342,28 @@ async function testDB() {
       attachMessageToGear[0]
     );
 
+    //******************* ROLES TESTS******************//
+    const allRoles = await getAllRoles();
+    console.log('testing getAllRoles', allRoles);
+
+    const roleById = await getRoleById(1);
+    console.log('testing getRoleById', roleById);
+
+    const roleByCode = await getRoleByCode(2);
+    console.log('testing getRoleByCode', roleByCode);
+
+    const roleByName = await getRoleByName('admin');
+    console.log('testing getRoleByName', roleByName);
+
+    const roleByActive = await getRoleByActive(true);
+    console.log('testing getRoleByActive', roleByActive);
+
+    const userByRoleId = await getUserByRoleId(2);
+    console.log('testing getUserByRoleId', userByRoleId);
+
+    const roleByUserId = await getRoleIdByUserId(1);
+    console.log('testing getRoleByUSERId', roleByUserId);
+
     console.log('finished testing database!');
   } catch (error) {
     console.log('error testing db');
@@ -295,6 +378,8 @@ async function rebuildDB() {
     await createFakeUsers();
     await createFakeGearPost();
     await createFakeMessages();
+    await createFakeRoles();
+    await createFakeUserRoles();
     await testDB();
   } catch (error) {
     console.log('Error during rebuildDB');
