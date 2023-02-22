@@ -45,8 +45,8 @@ apiRouter.use('/users', usersRouter);
 // const rolesRouter = require('./roles');
 // apiRouter.use('/roles', rolesRouter);
 
-// const gearPostsRouter = require('./gearPosts');
-// apiRouter.use('/gearPosts', gearPostsRouter);
+const gearPostsRouter = require('./gearPosts');
+apiRouter.use('/gearPosts', gearPostsRouter);
 
 // const userRolesRouter = require('./userRoles');
 // apiRouter.use('/userRoles', userRolesRouter);
