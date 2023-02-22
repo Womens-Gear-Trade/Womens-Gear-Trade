@@ -120,7 +120,8 @@ usersRouter.get('/me', async (req, res, next) => {
 //PATCH /api/users/:userId
 usersRouter.patch('/:userId', requireUser, async (req, res, next) => {
   const { name, email, address, username, password } = req.body;
-
+  console.log('this is req.body', req.body);
+  console.log('this is password in api', password);
   const id = req.params.userId;
 
   try {

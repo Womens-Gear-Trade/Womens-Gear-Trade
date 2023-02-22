@@ -113,8 +113,8 @@ async function getUserByEmail(email) {
   }
 }
 
-async function updateUser(id, name, email, address, username, password) {
-  console.log('id', id, 'pass to update:', password);
+async function updateUser(id, { name, email, address, username, password }) {
+  console.log('id', id, 'use4rname to update:', username);
   const updatedHashedPassword = await bcrypt.hash(password, saltRounds);
   try {
     const {
