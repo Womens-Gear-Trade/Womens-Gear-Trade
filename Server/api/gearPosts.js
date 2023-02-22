@@ -64,13 +64,15 @@ gearPostsRouter.post('/', requireUser, async (req, res, next) => {
     condition,
     category,
     size,
-    authorId,
     createdAt,
+    updatedAt,
   } = req.body;
   if (req.user);
   {
     try {
-      // console.log('this our reqbod:', req.body);
+      const authorId = req.user.id;
+
+      console.log('this the user id:', authorId);
       const newGearPost = await createGearPost({
         title,
         location,
@@ -81,6 +83,7 @@ gearPostsRouter.post('/', requireUser, async (req, res, next) => {
         size,
         authorId,
         createdAt,
+        updatedAt,
       });
 
       res.send(newGearPost);
@@ -101,7 +104,8 @@ gearPostsRouter.patch('/:gearPostId', requireUser, async (req, res, next) => {
     category,
     size,
     authorId,
-    createdAt,
+    createdat,
+    updatedat,
   } = req.body;
 
   const id = req.params.gearPostId;
@@ -125,7 +129,8 @@ gearPostsRouter.patch('/:gearPostId', requireUser, async (req, res, next) => {
         category,
         size,
         authorId,
-        createdAt,
+        createdat,
+        updatedat,
       });
 
       res.send(updatedGearPost);
