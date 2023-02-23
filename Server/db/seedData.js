@@ -39,10 +39,13 @@ const {
   getRoleByName,
   getRoleByActive,
   getUserByRoleId,
-  getRoleIdByUserId,
 } = require('./roles');
 
-const { createUserRoles, getAllUserRoles } = require('./userRoles');
+const {
+  createUserRoles,
+  getAllUserRoles,
+  getFullRoleByUserId,
+} = require('./userRoles');
 
 async function dropTables() {
   try {
@@ -104,8 +107,8 @@ async function createTables() {
 
       CREATE TABLE roles (
         id SERIAL PRIMARY KEY,
-        roleName VARCHAR(255),
-        roleCode VARCHAR(255),
+        rolename VARCHAR(255) DEFAULT 'user',
+        rolecode VARCHAR(255) DEFAULT 2,
         description TEXT,
         createdOn DATE,
         active BOOLEAN DEFAULT true
@@ -207,14 +210,14 @@ async function createFakeRoles() {
   try {
     const fakeRole = [
       {
-        roleName: 'admin',
-        roleCode: 2,
+        rolename: 'admin',
+        rolecode: 2,
         description: 'admin can change stuff',
         createdOn: '2023-02-19',
       },
       {
-        roleName: 'user',
-        roleCode: 1,
+        rolename: 'user',
+        rolecode: 1,
         description: 'user sells and trades',
         createdOn: '2023-02-19',
       },
@@ -361,7 +364,7 @@ async function testDB() {
     const userByRoleId = await getUserByRoleId(2);
     console.log('testing getUserByRoleId', userByRoleId);
 
-    const roleByUserId = await getRoleIdByUserId(1);
+    const roleByUserId = await getFullRoleByUserId(1);
     console.log('testing getRoleByUSERId', roleByUserId);
 
     console.log('finished testing database!');

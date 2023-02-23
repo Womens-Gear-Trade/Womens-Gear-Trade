@@ -42,16 +42,16 @@ apiRouter.use((req, res, next) => {
 const usersRouter = require('./users');
 apiRouter.use('/users', usersRouter);
 
-// const rolesRouter = require('./roles');
-// apiRouter.use('/roles', rolesRouter);
+const rolesRouter = require('./roles');
+apiRouter.use('/roles', rolesRouter);
 
 const gearPostsRouter = require('./gearPosts');
 apiRouter.use('/gearPosts', gearPostsRouter);
 
-// const userRolesRouter = require('./userRoles');
-// apiRouter.use('/userRoles', userRolesRouter);
+const userRolesRouter = require('./userRoles');
+apiRouter.use('/userRoles', userRolesRouter);
 
-// const messagesRouter = require('./messages');
-// apiRouter.use('/messages', messagesRouter);
+const messagesRouter = require('./messages');
+apiRouter.use('/messages', messagesRouter);
 
 module.exports = apiRouter;
