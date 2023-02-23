@@ -1,16 +1,16 @@
 const client = require('./client');
 
-async function createRoles({ roleName, roleCode, description, createdOn }) {
+async function createRoles({ description, createdOn }) {
   try {
     const {
       rows: [role],
     } = await client.query(
       `
-            INSERT INTO roles (roleName, roleCode, description, createdOn)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO roles ( description, createdOn)
+            VALUES ($1, $2 )
             RETURNING *;
             `,
-      [roleName, roleCode, description, createdOn]
+      [description, createdOn]
     );
     return role;
   } catch (error) {
@@ -53,7 +53,7 @@ async function getRoleByCode(roleCode) {
       `
         SELECT *
         FROM roles
-        WHERE roleCode = $1;
+        WHERE rolecode = $1;
         `,
       [roleCode]
     );
@@ -69,7 +69,7 @@ async function getRoleByName(roleName) {
       `
           SELECT *
           FROM roles
-          WHERE roleName = $1;
+          WHERE rolename = $1;
           `,
       [roleName]
     );
@@ -112,29 +112,31 @@ async function getUserByRoleId(id) {
   }
 }
 
-async function getRoleIdByUserId(id) {
+async function updateRoles(id, { ...fields }) {
+  console.log('id:', id, 'update fields:', fields);
+  const setString = Object.keys(fields)
+    .map((key, index) => `"${key}"=$${index + 1}`)
+    .join(', ');
+
   try {
-    const { rows: role } = await client.query(
+    const {
+      rows: [role],
+    } = await client.query(
       `
-              SELECT roles.*
-              FROM roles
-              JOIN userRoles ON userRoles."roleId" = roles.id
-              WHERE userRoles."userId" = $1
-              `,
-      [id]
+      UPDATE roles
+      SET ${setString}
+      WHERE id = ${id}
+      RETURNING *;
+      `,
+
+      Object.values(fields)
     );
+    console.log('These are my updated roles: ', role);
     return role;
   } catch (error) {
     throw error;
   }
 }
-
-//get roole by id
-//get role by role code/name
-//get role by active
-
-//get user by role id
-//get roleid by user
 
 module.exports = {
   createRoles,
@@ -144,5 +146,5 @@ module.exports = {
   getRoleByName,
   getRoleByActive,
   getUserByRoleId,
-  getRoleIdByUserId,
+  updateRoles,
 };
