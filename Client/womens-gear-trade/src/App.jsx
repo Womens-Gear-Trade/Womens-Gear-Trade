@@ -1,12 +1,22 @@
-import './App.css';
-import { Login, Signup } from './Components/AuthForm';
+import { Routes, Route } from 'react-router-dom';
+
+import { Navbar, Home, LogReg } from './Components/Index';
 
 function App() {
   return (
     <div className='App'>
-      Hello World!
-      <div>{Login}</div>
-      <div>{Signup}</div>
+      <Navbar />
+
+      <Routes>
+        <Route
+          path='/'
+          element={<Home />}
+        ></Route>
+        <Route
+          path='/login'
+          element={<LogReg />}
+        ></Route>
+      </Routes>
     </div>
   );
 }

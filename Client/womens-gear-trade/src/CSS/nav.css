@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  border: 1pt black solid;
+  padding: 2%;
+  /* position: sticky;
+  top: 0; */
+}
+
+.navlink {
+  color: green;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: grey;
+}
