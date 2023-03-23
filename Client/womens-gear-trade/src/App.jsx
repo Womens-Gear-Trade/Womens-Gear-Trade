@@ -9,7 +9,7 @@ import {
   Blog,
   Meetups,
   Profile,
-} from './Components/Index';
+} from './Components/index';
 
 function App() {
   return (
