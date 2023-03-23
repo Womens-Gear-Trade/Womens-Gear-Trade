@@ -5,9 +5,9 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 
-const api = require('./api');
+const api = require('./Server/api');
 
-const client = require('./db/client');
+const client = require('./Server/db/client');
 client.connect();
 
 // const apiRouter = require('./api');
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api', api);
+app.use('./Server/api', api);
 
 // app.use('/', (req, res) => {
 //   res.sendFile(
