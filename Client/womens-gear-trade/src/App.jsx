@@ -9,7 +9,7 @@ import {
   Blog,
   Meetups,
   Profile,
-} from './Components/index';
+} from './Components/Index';
 
 function App() {
   return (
@@ -17,34 +17,13 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route
-          path='/'
-          element={<Home />}
-        ></Route>
-        <Route
-          path='/about'
-          element={<About />}
-        ></Route>
-        <Route
-          path='/gear'
-          element={<Gear />}
-        ></Route>
-        <Route
-          path='/blog'
-          element={<Blog />}
-        ></Route>
-        <Route
-          path='/meetups'
-          element={<Meetups />}
-        ></Route>
-        <Route
-          path='/profile'
-          element={<Profile />}
-        ></Route>
-        <Route
-          path='/login'
-          element={<LogReg />}
-        ></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/gear' element={<Gear />}></Route>
+        <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/meetups' element={<Meetups />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/login' element={<LogReg />}></Route>
       </Routes>
     </div>
   );
