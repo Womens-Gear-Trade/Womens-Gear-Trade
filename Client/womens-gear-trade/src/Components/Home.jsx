@@ -12,12 +12,9 @@ const Home = () => {
   return (
     <div className='home-container'>
       <div className='home-content'>
-        <div
-          className='home-block'
-          id='welcome'
-        >
+        <div className='home-block' id='welcome'>
           <div id='welcome-group1'>
-            <h1>Welcome to Women's Gear!</h1>
+            <h1>Welcome to Women's Gear!!</h1>
             <h3>
               Helping women and non-binary individuals get the tools they need
               to get into the outdoors!{' '}
@@ -25,11 +22,7 @@ const Home = () => {
             <button>Join Us!</button>
           </div>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              src={welcome}
-              alt='picofpeeps'
-            ></img>
+            <img id='welcome-blockimg' src={welcome} alt='picofpeeps'></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@peterconlan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -42,16 +35,9 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div
-          className='home-block'
-          id='who-block'
-        >
+        <div className='home-block' id='who-block'>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              alt='picofus'
-              src={whoAreWe}
-            ></img>
+            <img id='welcome-blockimg' alt='picofus' src={whoAreWe}></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/de/@fredasem?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -69,10 +55,7 @@ const Home = () => {
             <p>about link</p>
           </div>
         </div>
-        <div
-          className='home-block'
-          id='gear-block'
-        >
+        <div className='home-block' id='gear-block'>
           <div id='welcome-group3'>
             <h1>Find your gear!</h1>
             <h3>
@@ -98,10 +81,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div
-          className='home-block'
-          id='blog'
-        >
+        <div className='home-block' id='blog'>
           <div id='img-block'>
             <img
               id='welcome-blockimg'
@@ -128,10 +108,7 @@ const Home = () => {
             <button>Blog</button>
           </div>
         </div>
-        <div
-          className='home-block'
-          id='connect'
-        >
+        <div className='home-block' id='connect'>
           <div id='welcome-group5'>
             <h1>Get connected!</h1>
             <h3>
@@ -157,16 +134,9 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div
-          className='home-block'
-          id='hear'
-        >
+        <div className='home-block' id='hear'>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              alt='picofsomin'
-              src={babyHear}
-            ></img>
+            <img id='welcome-blockimg' alt='picofsomin' src={babyHear}></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@we_are_rising?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>

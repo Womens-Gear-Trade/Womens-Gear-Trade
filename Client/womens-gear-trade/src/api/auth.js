@@ -1,4 +1,5 @@
 const BASE_API = `/api`;
+console.log('this is base api', BASE_API);
 
 export const authenticateUser = async (
   username,
