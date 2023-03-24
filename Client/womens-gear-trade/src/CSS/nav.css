@@ -1,16 +1,31 @@
-nav {
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+.navbar-content {
   display: flex;
-  justify-content: center;
-  gap: 3%;
-  border: 1pt black solid;
+  justify-content: space-between;
+}
+
+.logo {
   padding: 2%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: flex-end;
+  gap: 5%;
+  padding: 2%;
+  flex-wrap: wrap;
+  width: 35%;
+  font-family: 'Sora', sans-serif;
+
   /* position: sticky;
   top: 0; */
 }
 
 .navlink {
-  color: green;
+  color: black;
   text-decoration: none;
+  font-size: small;
 }
 
 .navlink:hover {

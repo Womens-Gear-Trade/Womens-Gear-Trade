@@ -6,49 +6,52 @@ const Navbar = () => {
   return (
     <div>
       <header>
-        <nav>
-          <NavLink
-            to='/'
-            className={'navlink'}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to='/about'
-            className={'navlink'}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to='/gear'
-            className={'navlink'}
-          >
-            Gear
-          </NavLink>
-          <NavLink
-            to='/blog'
-            className={'navlink'}
-          >
-            Blog
-          </NavLink>
-          <NavLink
-            to='/meetups'
-            className={'navlink'}
-          >
-            Meet Ups
-          </NavLink>
-          <NavLink
-            to='/profile'
-            className={'navlink'}
-          >
-            Profile
-          </NavLink>
-          <NavLink
-            to='/login'
-            className={'navlink'}
-          >
-            Login
-          </NavLink>
+        <nav className='navbar-content'>
+          <div className='logo'>Women's Gear Trade</div>
+          <div className='nav-links'>
+            <NavLink
+              to='/'
+              className={'navlink'}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to='/about'
+              className={'navlink'}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to='/gear'
+              className={'navlink'}
+            >
+              Gear
+            </NavLink>
+            <NavLink
+              to='/blog'
+              className={'navlink'}
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              to='/social'
+              className={'navlink'}
+            >
+              Social
+            </NavLink>
+            <NavLink
+              to='/profile'
+              className={'navlink'}
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              to='/login'
+              className={'navlink'}
+            >
+              Login
+            </NavLink>
+          </div>
         </nav>
       </header>
     </div>

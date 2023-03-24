@@ -7,9 +7,9 @@ import {
   About,
   Gear,
   Blog,
-  Meetups,
+  Social,
   Profile,
-} from './Components/Index';
+} from './Components/index';
 
 function App() {
   return (
@@ -17,13 +17,34 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/gear' element={<Gear />}></Route>
-        <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/meetups' element={<Meetups />}></Route>
-        <Route path='/profile' element={<Profile />}></Route>
-        <Route path='/login' element={<LogReg />}></Route>
+        <Route
+          path='/'
+          element={<Home />}
+        ></Route>
+        <Route
+          path='/about'
+          element={<About />}
+        ></Route>
+        <Route
+          path='/gear'
+          element={<Gear />}
+        ></Route>
+        <Route
+          path='/blog'
+          element={<Blog />}
+        ></Route>
+        <Route
+          path='/social'
+          element={<Social />}
+        ></Route>
+        <Route
+          path='/profile'
+          element={<Profile />}
+        ></Route>
+        <Route
+          path='/login'
+          element={<LogReg />}
+        ></Route>
       </Routes>
     </div>
   );
