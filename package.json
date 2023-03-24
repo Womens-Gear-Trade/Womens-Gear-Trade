@@ -6,8 +6,7 @@
     "seed": "node ./db/seed.js",
     "seed:dev": "nodemon ./db/seed.js",
     "start": "node ./index.js",
-    "start:dev": "nodemon ./index.js",
-    "heroku-postbuild": "cd Client && npm install && npm run build"
+    "start:dev": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",

@@ -19,12 +19,12 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, '../Client/vite-project', 'dist')));
-if (process.env.NODE_ENV === 'production') {
-  app.use(
-    express.static(path.join(__dirname, '/Client/womens-gear-trade/build'))
-  );
-}
+app.use(express.static(path.join(__dirname + '/public')));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(
+//     express.static(path.join(__dirname, '/Client/womens-gear-trade/build'))
+//   );
+// }
 
 app.use((req, res, next) => {
   console.log('<---BODY SNATCHER STARTS HERE--->');
