@@ -1,5 +1,6 @@
 .register-container {
   padding: 12%;
+  padding-top: 8%;
   background-color: #bbf0f3;
   background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
 }
