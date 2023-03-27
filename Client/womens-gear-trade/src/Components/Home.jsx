@@ -5,6 +5,7 @@ import gearClimbing from '../assets/gearClimbing.png';
 import snowboardBlog from '../assets/snowboardBlog.png';
 import babyHear from '../assets/babyHear.png';
 import connectedLadies from '../assets/connectedLadies.png';
+import { Link } from 'react-router-dom';
 
 import '../CSS/home.css';
 
@@ -24,7 +25,9 @@ const Home = () => {
               Helping women and non-binary individuals get the tools they need
               to get into the outdoors!{' '}
             </h3>
-            <button>Join Us!</button>
+            <Link to='/signup'>
+              <button>Join Us!</button>
+            </Link>
           </div>
           <div id='img-block'>
             <img

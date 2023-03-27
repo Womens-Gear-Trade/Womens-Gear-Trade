@@ -1,11 +1,14 @@
 import React from 'react';
+import '../CSS/social.css';
 
-const Meetups = () => {
+const Social = () => {
   return (
-    <div>
-      <div>Meet up with some badass ladies here!</div>
+    <div className='social-container'>
+      <div className='social-content'>
+        Meet up with some badass ladies here!
+      </div>
     </div>
   );
 };
 
-export default Meetups;
+export default Social;

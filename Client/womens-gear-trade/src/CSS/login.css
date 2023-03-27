@@ -1,0 +1,35 @@
+.login-container {
+  padding: 18%;
+  background-color: #bbf0f3;
+  background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: black 1pt solid; */
+  font-family: 'Sora', sans-serif;
+}
+
+.loginButt-container {
+  display: flex;
+  justify-content: center;
+}
+
+.accountQuestion-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  text-align: center;
+}
+
+.accountQuestion {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  font-size: 12pt;
+}

@@ -66,72 +66,96 @@ const AuthForm = ({ name, buttonName }) => {
     <div id='whole-login-form-box'>
       {name === 'login' ? (
         <div>
-          <h2>Welcome Back!</h2>
-          <h3>Please Log in.</h3>
+          <h3 className='form-header'>Log In Here</h3>
         </div>
       ) : (
         <div>
-          <h2>Welcome To Womens Gear!</h2>
-          <h3>Please Register Here.</h3>
+          <h3 className='form-header'>Sign Up Here</h3>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} name={name}>
+      <form
+        onSubmit={handleSubmit}
+        name={name}
+      >
         <div className='login-form'>
-          {' '}
-          {/* <div className='login-form'> */}
-          <label htmlFor='username'>Username </label>
-          <input type='text' name='username' />
-          {/* </div> */}
-          {/* <div > */}
-          <label htmlFor='password'>Password </label>
-          <input type={passwordShown ? 'text' : 'password'} name='password' />
-          {/* </div> */}
+          <input
+            type='text'
+            name='username'
+            placeholder='Username'
+          />
+
+          <input
+            type={passwordShown ? 'text' : 'password'}
+            name='password'
+            placeholder='Password'
+          />
         </div>
-        <i id='eyeball' onClick={togglePasswordVisiblity}>
-          {eye}
-        </i>{' '}
-        <p> password must be at least 8 characters long</p>
+        <div className='eyeball-container'>
+          <i
+            id='eyeball'
+            onClick={togglePasswordVisiblity}
+          >
+            {eye}
+          </i>
+        </div>
+        <div className='password-paragraph'>
+          <p className='pass-description'>
+            {' '}
+            password must be at least 8 characters long
+          </p>
+        </div>
         {name === 'login' ? (
-          <button className='login-button'>{buttonName}</button>
+          <div className='loginButt-container'>
+            <button className='login-button'>{buttonName}</button>
+          </div>
         ) : (
           <div>
             <div className='login-form'>
-              {/* <div  className='login-form'> */}
-              <label htmlFor='name'>Full Name </label>
-              <input type='text' name='fullname' />
-              {/* </div> */}
+              <input
+                type='text'
+                name='fullname'
+                placeholder='Full Name'
+              />
 
-              {/* <div  className='login-form'> */}
-              <label htmlFor='address'>Address </label>
-              <input type='text' name='address' />
-              {/* </div> */}
+              <input
+                type='text'
+                name='address'
+                placeholder='Address'
+              />
 
-              {/* <div  > */}
-              <label htmlFor='email'>Email </label>
-              <input type='text' name='email' />
-              {/* </div> */}
+              <input
+                type='text'
+                name='email'
+                placeholder='Email Address'
+              />
             </div>
-            <button className='login-button'>{buttonName}</button>
+            <div className='loginButt-container'>
+              <button className='login-button'>{buttonName}</button>
+            </div>
           </div>
         )}
       </form>
-      <div>
+      <div className='accountQuestion-container'>
         {name === 'login' ? (
-          <p>
+          <p className='accountQuestion'>
             Not a user yet?
-            <Link to='/signup' className='login-links'>
+            <Link
+              to='/signup'
+              className='login-links'
+            >
               Sign Up Here
             </Link>
-            !
           </p>
         ) : (
-          <p>
+          <p className='accountQuestion'>
             Already have an account?
-            <Link to='/login' className='login-links'>
+            <Link
+              to='/login'
+              className='login-links'
+            >
               Login Here
             </Link>
-            !
           </p>
         )}
       </div>
@@ -139,5 +163,15 @@ const AuthForm = ({ name, buttonName }) => {
   );
 };
 
-export const Login = <AuthForm name={'login'} buttonName={'Login'} />;
-export const Signup = <AuthForm name={'register'} buttonName={'Register'} />;
+export const Login = (
+  <AuthForm
+    name={'login'}
+    buttonName={'Login'}
+  />
+);
+export const Signup = (
+  <AuthForm
+    name={'register'}
+    buttonName={'Register'}
+  />
+);

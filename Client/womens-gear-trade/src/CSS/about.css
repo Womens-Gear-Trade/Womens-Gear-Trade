@@ -1,0 +1,12 @@
+.about-container {
+  padding: 2%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: black 1pt solid; */
+  font-family: 'Sora', sans-serif;
+}

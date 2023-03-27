@@ -1,9 +1,10 @@
 import React from 'react';
+import '../CSS/gear.css';
 
 const Gear = () => {
   return (
-    <div>
-      <div>These are all the gear posts</div>
+    <div className='gear-container'>
+      <div className='gear-content'>Gear will be posted here!</div>
     </div>
   );
 };

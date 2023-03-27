@@ -1,0 +1,128 @@
+.register-container {
+  padding: 12%;
+  background-color: #bbf0f3;
+  background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+}
+
+.register-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+}
+
+#whole-login-form-box {
+  background-color: white;
+  border: 1pt solid white;
+  padding: 5%;
+}
+
+.login-form {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.password-paragraph {
+  display: flex;
+  justify-content: center;
+}
+
+.pass-description {
+  padding: 2%;
+  font-size: 9pt;
+  text-align: center;
+}
+
+.eyeball-container {
+  display: flex;
+  justify-content: center;
+}
+
+#eyeball {
+  align-items: center;
+}
+
+.loginButt-container {
+  display: flex;
+  justify-content: center;
+}
+
+.accountQuestion-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  text-align: center;
+}
+
+.accountQuestion {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  font-size: 12pt;
+}
+
+.login-links {
+  padding: 2%;
+  text-align: center;
+}
+
+input {
+  padding: 2%;
+  margin: 1%;
+}
+
+/* CSS */
+.login-button {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+
+  margin: 0;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+}
+
+.login-button:disabled {
+  pointer-events: none;
+}
+
+.login-button:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
