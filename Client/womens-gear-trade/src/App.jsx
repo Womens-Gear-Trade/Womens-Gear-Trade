@@ -3,12 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import {
   Navbar,
   Home,
-  LogReg,
+  LoginHere,
   About,
   Gear,
   Blog,
   Social,
   Profile,
+  Register,
 } from './Components/index';
 
 function App() {
@@ -43,7 +44,11 @@ function App() {
         ></Route>
         <Route
           path='/login'
-          element={<LogReg />}
+          element={<LoginHere />}
+        ></Route>
+        <Route
+          path='/signup'
+          element={<Register />}
         ></Route>
       </Routes>
     </div>
