@@ -6,6 +6,8 @@ import snowboardBlog from '../assets/snowboardBlog.png';
 import babyHear from '../assets/babyHear.png';
 import connectedLadies from '../assets/connectedLadies.png';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import '../CSS/home.css';
 
@@ -23,7 +25,7 @@ const Home = () => {
               to get into the outdoors!{' '}
             </h3>
             <Link to='/signup'>
-              <button>Join Us!</button>
+              <button className='sign-butt'>Join Us!</button>
             </Link>
           </div>
           <div id='img-block'>
@@ -61,7 +63,14 @@ const Home = () => {
               <span id='whyword'> Why</span> do we exist?
             </h1>
             <h3>Women rule and we are the coolest! </h3>
-            <p>about link</p>
+            <div id='readp'>
+              <Link to='/about'>
+                <p>
+                  Read more about us here!{' '}
+                  <FontAwesomeIcon id='arrow' icon={faArrowRight} />
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
         <div className='home-block' id='gear-block'>
@@ -118,7 +127,7 @@ const Home = () => {
               Hear from women across the country of all activity levels on their
               outdoor experiences!{' '}
             </h3>
-            <button>Blog</button>
+            <button className='blog-butt'>Visit The Blog!</button>
           </div>
         </div>
         <div className='home-block' id='connect'>
@@ -174,7 +183,7 @@ const Home = () => {
               <p>who knows what this says</p>
             </div>
 
-            <button>Submit</button>
+            <button className='hear-butt'>Select!</button>
           </div>
         </div>
       </div>
