@@ -16,7 +16,7 @@ const Home = () => {
         <div className='home-block' id='welcome'>
           <div id='welcome-group1'>
             <h1>
-              HIIIIIIII Welcome to <span id='women-word'>Women's</span> Gear!
+              Welcome to <span id='women-word'>Women's</span> Gear!
             </h1>
             <h3>
               Helping women and non-binary individuals get the tools they need
