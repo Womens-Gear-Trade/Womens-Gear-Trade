@@ -1,9 +1,10 @@
 import React from 'react';
+import '../CSS/profile.css';
 
 const Profile = () => {
   return (
-    <div>
-      <div>This is your profile!</div>
+    <div className='profile-container'>
+      <div className='profile-content'>This is your profile!</div>
     </div>
   );
 };
