@@ -10,6 +10,7 @@ import {
   Social,
   Profile,
   Register,
+  Footer,
 } from './Components/index';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           element={<Register />}
         ></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,39 @@
+footer {
+  background-color: #bbf0f3;
+  background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10%;
+  font-family: 'Sora', sans-serif;
+
+  background-color: #bbf0f3;
+  background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+}
+
+.copyright {
+  font-family: 'Sora', sans-serif;
+  padding-bottom: 3%;
+  text-align: center;
+  font-size: 10pt;
+}
+
+#social-list {
+  text-decoration: none;
+}
+
+.list {
+  list-style-type: none;
+}
+
+#miniLink {
+  padding: 1%;
+  text-decoration: none;
+  color: black;
+}
+
+#miniLink:hover {
+  color: grey;
+}
