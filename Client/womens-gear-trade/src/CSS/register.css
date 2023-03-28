@@ -17,6 +17,7 @@
   background-color: white;
   border: 1pt solid white;
   padding: 5%;
+  box-shadow: 0 0 1em rgb(158, 159, 166);
 }
 
 .login-form {

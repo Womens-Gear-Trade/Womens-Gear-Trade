@@ -7,3 +7,4 @@ export { default as Blog } from './Blog';
 export { default as Social } from './Social';
 export { default as Profile } from './Profile';
 export { default as Register } from './Register';
+export { default as Footer } from './Footer';

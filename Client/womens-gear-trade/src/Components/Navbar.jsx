@@ -4,7 +4,7 @@ import '../CSS/nav.css';
 
 const Navbar = () => {
   return (
-    <div>
+    <div id='is-sticky'>
       <header>
         <nav className='navbar-content'>
           <div className='logo'>Women's Gear Trade</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import welcome from '../assets/girlJumpWelcome.png';
 import whoAreWe from '../assets/whoAreWe.png';
-import gearClimbing from '../assets/gearClimbing.png';
+import gearHome from '../assets/gearHome.png';
 import snowboardBlog from '../assets/snowboardBlog.png';
 import babyHear from '../assets/babyHear.png';
 import connectedLadies from '../assets/connectedLadies.png';
@@ -13,9 +13,15 @@ import '../CSS/home.css';
 
 const Home = () => {
   return (
-    <div className='home-container'>
+    <div
+      className='home-container'
+      id='homeJump'
+    >
       <div className='home-content'>
-        <div className='home-block' id='welcome'>
+        <div
+          className='home-block'
+          id='welcome'
+        >
           <div id='welcome-group1'>
             <h1>
               Welcome to <span id='women-word'>Women's</span> Gear!
@@ -29,7 +35,11 @@ const Home = () => {
             </Link>
           </div>
           <div id='img-block'>
-            <img id='welcome-blockimg' src={welcome} alt='picofpeeps'></img>
+            <img
+              id='welcome-blockimg'
+              src={welcome}
+              alt='picofpeeps'
+            ></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@peterconlan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -42,9 +52,17 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className='home-block' id='who-block'>
+        {/* ********************************************************** */}
+        <div
+          className='home-block'
+          id='who-block'
+        >
           <div id='img-block'>
-            <img id='welcome-blockimg' alt='picofus' src={whoAreWe}></img>
+            <img
+              id='welcome-blockimg'
+              alt='picofus'
+              src={whoAreWe}
+            ></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/de/@fredasem?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -67,13 +85,20 @@ const Home = () => {
               <Link to='/about'>
                 <p>
                   Read more about us here!{' '}
-                  <FontAwesomeIcon id='arrow' icon={faArrowRight} />
+                  <FontAwesomeIcon
+                    id='arrow'
+                    icon={faArrowRight}
+                  />
                 </p>
               </Link>
             </div>
           </div>
         </div>
-        <div className='home-block' id='gear-block'>
+        {/* ********************************************************** */}
+        <div
+          className='home-block'
+          id='gear-block'
+        >
           <div id='welcome-group3'>
             <h1>
               Find your <span id='gearword'>gear!</span>
@@ -85,23 +110,27 @@ const Home = () => {
           </div>
           <div id='img-block'>
             <img
-              id='welcome-blockimg-gear'
+              id='welcome-blockimg'
               alt='picofpeeps'
-              src={gearClimbing}
+              src={gearHome}
             ></img>
             <p className='imgref'>
               Photo by{' '}
-              <a href='https://unsplash.com/@speckfechta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-                x )
+              <a href='https://unsplash.com/@mvds?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+                Mads Schmidt Rasmussen
               </a>{' '}
               on{' '}
-              <a href='https://unsplash.com/photos/N4QTBfNQ8Nk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+              <a href='https://unsplash.com/photos/VTi8DpO4ViQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
                 Unsplash
               </a>
             </p>
           </div>
         </div>
-        <div className='home-block' id='blog'>
+        {/* ********************************************************** */}
+        <div
+          className='home-block'
+          id='blog'
+        >
           <div id='img-block'>
             <img
               id='welcome-blockimg'
@@ -130,7 +159,11 @@ const Home = () => {
             <button className='blog-butt'>Visit The Blog!</button>
           </div>
         </div>
-        <div className='home-block' id='connect'>
+        {/* ********************************************************** */}
+        <div
+          className='home-block'
+          id='connect'
+        >
           <div id='welcome-group5'>
             <h1>
               Get <span id='connectedword'>connected!</span>
@@ -158,9 +191,17 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className='home-block' id='hear'>
+        {/* ********************************************************** */}
+        <div
+          className='home-block-6'
+          id='hear'
+        >
           <div id='img-block'>
-            <img id='welcome-blockimg' alt='picofsomin' src={babyHear}></img>
+            <img
+              id='welcome-blockimg-baby'
+              alt='picofsomin'
+              src={babyHear}
+            ></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@we_are_rising?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -186,6 +227,7 @@ const Home = () => {
             <button className='hear-butt'>Select!</button>
           </div>
         </div>
+        {/* ********************************************************** */}
       </div>
     </div>
   );
