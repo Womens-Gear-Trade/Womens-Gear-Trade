@@ -77,6 +77,7 @@
 .sign-butt:hover {
   --_p: 100%;
   transition: background-position 0.4s, background-size 0s;
+  color: white;
 }
 .sign-butt:active {
   box-shadow: 0 0 9e9Q inset #0009;
@@ -88,7 +89,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 1.7rem;
   cursor: pointer;
-  padding: 0.1em 0.6em;
+  padding: 0.3em 0.9em;
   font-weight: bold;
   border: none;
 }
@@ -109,6 +110,7 @@
 .blog-butt:hover {
   --_p: 100%;
   transition: background-position 0.4s, background-size 0s;
+  color: white;
 }
 .blog-butt:active {
   box-shadow: 0 0 9e9Q inset #0009;
@@ -120,7 +122,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 1.7rem;
   cursor: pointer;
-  padding: 0.1em 0.6em;
+  padding: 0.3em 0.9em;
   font-weight: bold;
   border: none;
 }
@@ -141,6 +143,7 @@
 .hear-butt:hover {
   --_p: 100%;
   transition: background-position 0.4s, background-size 0s;
+  color: white;
 }
 .hear-butt:active {
   box-shadow: 0 0 9e9Q inset #0009;
@@ -152,7 +155,7 @@
   font-family: 'Sora', sans-serif;
   font-size: 1.7rem;
   cursor: pointer;
-  padding: 0.1em 0.6em;
+  padding: 0.3em 0.9em;
   font-weight: bold;
   border: none;
 }
@@ -185,11 +188,72 @@
 #usword {
   color: rgb(237, 125, 64);
 }
-#arrow {
-  padding: 4%;
+
+
+/* ~~~~~~~ INIT. BTN ~~~~~~~ */
+#whowhy-link{
+  text-decoration: none;
 }
-#arrow:hover {
-  border: black solid 1pt;
-  border-radius: 50%;
-  padding: 2%;
+.btn {    
+  position: relative; 
+  /* padding: 1.4rem 4.2rem;
+  padding-right: 3.1rem; */
+ 
+  padding: 2rem;
+  padding-left: 3rem;
+  font-size: 15px;
+  color: black;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);  
+  cursor: pointer;
+  user-select: none;
+  
+}
+
+.btn:before, .btn:after {
+  content: '';
+  position: absolute; 
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: white;
+  font-weight: bolder;
+  transition-delay: .5s;
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background-image: linear-gradient(-25deg, #F9D976 0%, #f39f86 100%);
+  transition-delay: .35s;
+  padding-bottom: 1.5%;
+}
+/* From Left */
+
+.from-left:before, 
+.from-left:after {
+  top: 0;
+  width: 0;
+  height: 100%;
+}
+
+.from-left:before {
+  right: 0;
+  border:2.5px solid #f39f86;
+  border-left: 0;
+  border-right: 0;  
+}
+
+.from-left:after {
+  left: 0;
+  
+}
+
+.from-left:hover:before,
+.from-left:hover:after {
+  width: 100%;
 }

@@ -22,11 +22,13 @@ nav {
 
 .nav-links {
   display: flex;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
   gap: 5%;
   padding: 2%;
+  
   flex-wrap: wrap;
-  width: 35%;
+  width: 40%;
   font-family: 'Sora', sans-serif;
 
   /* position: sticky;

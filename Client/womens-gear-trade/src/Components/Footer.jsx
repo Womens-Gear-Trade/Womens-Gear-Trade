@@ -1,5 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faAppStore,
+  faFacebook,
+  faTiktok,
+  faInstagram,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
 import '../CSS/footer.css';
 
 const Footer = () => {
@@ -7,60 +15,78 @@ const Footer = () => {
     <div>
       <footer>
         <div className='footer-content'>
-          <div id='logo'>Logo here</div>
+          <div id='logo-container'>
+            <div id='logo'>Logo here</div>
+            <button id='logo-button'>Sign Up</button>
+          </div>
           <div id='socials'>
             <h3>Follow Us!</h3>
-            <ul className='list'>
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>TikTok</li>
-              <li>LinkedIn</li>
-              <li>App Store</li>
+            <ul className='sociallist'>
+              <li>
+                <FontAwesomeIcon
+                  className='icon-social'
+                  icon={faInstagram}
+                  size='2x'
+                  color='black'
+                />
+              </li>
+              <li>
+                {' '}
+                <FontAwesomeIcon
+                  className='icon-social'
+                  icon={faFacebook}
+                  color='black'
+                  size='2x'
+                />
+              </li>
+              <li>
+                {' '}
+                <FontAwesomeIcon
+                  className='icon-social'
+                  icon={faTiktok}
+                  color='black'
+                  size='2x'
+                />
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  className='icon-social'
+                  icon={faLinkedinIn}
+                  color='black'
+                  size='2x'
+                />
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  className='icon-social'
+                  icon={faAppStore}
+                  color='black'
+                  size='2x'
+                />
+              </li>
             </ul>
-            <button>Sign Up</button>
           </div>
           <div id='mini-navlinks'>
             <ul className='list'>
-              <a
-                id='miniLink'
-                href='#homeJump'
-              >
+              <a id='miniLink' href='#homeJump'>
                 <li>Home</li>
               </a>
-              <Link
-                id='miniLink'
-                to='/about'
-              >
+              <Link id='miniLink' to='/about'>
                 <li>About</li>
               </Link>
-              <Link
-                id='miniLink'
-                to='/gear'
-              >
+              <Link id='miniLink' to='/gear'>
                 <li>Gear</li>
               </Link>
-              <Link
-                id='miniLink'
-                to='/blog'
-              >
+              <Link id='miniLink' to='/blog'>
                 <li>Blog</li>
               </Link>
-              <Link
-                id='miniLink'
-                to='/social'
-              >
+              <Link id='miniLink' to='/social'>
                 <li>Social</li>
               </Link>
-              <Link
-                id='miniLink'
-                to='/profile'
-              >
+              <Link id='miniLink' to='/profile'>
                 <li>Profile</li>
               </Link>
-              <Link
-                id='miniLink'
-                to='/login'
-              >
+              <Link id='miniLink' to='/login'>
                 <li>Login</li>
               </Link>
             </ul>
