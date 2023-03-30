@@ -5,6 +5,11 @@ const jwt = require('jsonwebtoken');
 const { getUserById } = require('../db');
 // const { JWT_SECRET = 'donottell' } = process.env;
 
+apiRouter.use((req, res, next) => {
+  console.log('in default router');
+  next();
+});
+
 apiRouter.use(async (req, res, next) => {
   const prefix = 'Bearer ';
   const auth = req.header('Authorization');

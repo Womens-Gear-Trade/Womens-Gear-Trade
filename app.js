@@ -19,24 +19,45 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  if (req.originalUrl.startsWith('/api')) {
+    console.log('<---BODY SNATCHER STARTS HERE--->');
+    console.log(req.body);
+    console.log('<---BODY SNATCHER ENDS HERE--->');
+  }
+  next();
+});
+
+app.use('/api', api);
+
 // THIS IS WHAT TO COMMENT OUT WHEN EDITING
-app.use(express.static(path.join(__dirname + '/public')));
+app.get('/static/*', (req, res) => {
+  var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  // console.log('requested static URL', fullUrl);
+  console.log('requested original URL', req.originalUrl);
+  console.log(
+    'client file',
+    path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
+  );
+
+  res.sendFile(
+    path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
+  );
+});
+
+app.get('/*', (req, res) => {
+  var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  console.log('requested URL', fullUrl);
+  res.sendFile(
+    path.join(__dirname + '/Client/womens-gear-trade/build/index.html')
+  );
+});
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(
 //     express.static(path.join(__dirname, '/Client/womens-gear-trade/build'))
 //   );
 // }
-
-app.use((req, res, next) => {
-  console.log('<---BODY SNATCHER STARTS HERE--->');
-  console.log(req.body);
-  console.log('<---BODY SNATCHER ENDS HERE--->');
-
-  next();
-});
-
-app.use('./api', api);
 
 // app.use('/', (req, res) => {
 //   res.sendFile(
