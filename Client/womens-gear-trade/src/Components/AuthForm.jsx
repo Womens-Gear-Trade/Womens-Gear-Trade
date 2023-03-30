@@ -5,7 +5,7 @@ import { useAuth } from '../Custom-Hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 const eye = <FontAwesomeIcon icon={faEye} />;
-// import './style.css';
+//auth form
 
 const AuthForm = ({ name, buttonName }) => {
   // const { user } = useAuth();
@@ -74,16 +74,9 @@ const AuthForm = ({ name, buttonName }) => {
         </div>
       )}
 
-      <form
-        onSubmit={handleSubmit}
-        name={name}
-      >
+      <form onSubmit={handleSubmit} name={name}>
         <div className='login-form'>
-          <input
-            type='text'
-            name='username'
-            placeholder='Username'
-          />
+          <input type='text' name='username' placeholder='Username' />
 
           <input
             type={passwordShown ? 'text' : 'password'}
@@ -92,10 +85,7 @@ const AuthForm = ({ name, buttonName }) => {
           />
         </div>
         <div className='eyeball-container'>
-          <i
-            id='eyeball'
-            onClick={togglePasswordVisiblity}
-          >
+          <i id='eyeball' onClick={togglePasswordVisiblity}>
             {eye}
           </i>
         </div>
@@ -112,23 +102,11 @@ const AuthForm = ({ name, buttonName }) => {
         ) : (
           <div>
             <div className='login-form'>
-              <input
-                type='text'
-                name='fullname'
-                placeholder='Full Name'
-              />
+              <input type='text' name='fullname' placeholder='Full Name' />
 
-              <input
-                type='text'
-                name='address'
-                placeholder='Address'
-              />
+              <input type='text' name='address' placeholder='Address' />
 
-              <input
-                type='text'
-                name='email'
-                placeholder='Email Address'
-              />
+              <input type='text' name='email' placeholder='Email Address' />
             </div>
             <div className='loginButt-container'>
               <button className='login-button'>{buttonName}</button>
@@ -140,20 +118,14 @@ const AuthForm = ({ name, buttonName }) => {
         {name === 'login' ? (
           <p className='accountQuestion'>
             Not a user yet?
-            <Link
-              to='/signup'
-              className='login-links'
-            >
+            <Link to='/signup' className='login-links'>
               Sign Up Here
             </Link>
           </p>
         ) : (
           <p className='accountQuestion'>
             Already have an account?
-            <Link
-              to='/login'
-              className='login-links'
-            >
+            <Link to='/login' className='login-links'>
               Login Here
             </Link>
           </p>
@@ -163,15 +135,5 @@ const AuthForm = ({ name, buttonName }) => {
   );
 };
 
-export const Login = (
-  <AuthForm
-    name={'login'}
-    buttonName={'Login'}
-  />
-);
-export const Signup = (
-  <AuthForm
-    name={'register'}
-    buttonName={'Register'}
-  />
-);
+export const Login = <AuthForm name={'login'} buttonName={'Login'} />;
+export const Signup = <AuthForm name={'register'} buttonName={'Register'} />;
