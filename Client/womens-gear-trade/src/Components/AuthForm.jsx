@@ -5,7 +5,6 @@ import { useAuth } from '../Custom-Hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 const eye = <FontAwesomeIcon icon={faEye} />;
-//auth form
 
 const AuthForm = ({ name, buttonName }) => {
   // const { user } = useAuth();
