@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c44ef3da.css",
+    "main.js": "/static/js/main.e35a8ec0.js",
+    "static/js/787.90ff822b.chunk.js": "/static/js/787.90ff822b.chunk.js",
+    "static/media/girlJumpWelcome.png": "/static/media/girlJumpWelcome.b2c545ab7baf8783cb08.png",
+    "static/media/connectedLadies.png": "/static/media/connectedLadies.f94735b1f3b278a4dc52.png",
+    "static/media/whoAreWe.png": "/static/media/whoAreWe.62db97ec84492d9bfbb9.png",
+    "static/media/babyHear.png": "/static/media/babyHear.f2cbe8a028a6b1b9160d.png",
+    "static/media/gearHome.png": "/static/media/gearHome.b2db25a6674ef68bb138.png",
+    "static/media/snowboardBlog.png": "/static/media/snowboardBlog.361fc76480ea40d6bbb1.png",
+    "index.html": "/index.html",
+    "main.c44ef3da.css.map": "/static/css/main.c44ef3da.css.map",
+    "main.e35a8ec0.js.map": "/static/js/main.e35a8ec0.js.map",
+    "787.90ff822b.chunk.js.map": "/static/js/787.90ff822b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c44ef3da.css",
+    "static/js/main.e35a8ec0.js"
+  ]
+}
