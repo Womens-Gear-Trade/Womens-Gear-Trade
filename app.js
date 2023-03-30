@@ -31,27 +31,37 @@ app.use((req, res, next) => {
 app.use('/api', api);
 
 // THIS IS WHAT TO COMMENT OUT WHEN EDITING
-app.get('/static/*', (req, res) => {
-  var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  // console.log('requested static URL', fullUrl);
-  console.log('requested original URL', req.originalUrl);
-  console.log(
-    'client file',
-    path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
-  );
 
-  res.sendFile(
-    path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
+app.get('*', function (req, res) {
+  const index = path.join(
+    __dirname,
+    '/Client/womens-gear-trade/build',
+    'index.html'
   );
+  res.sendFile(index);
 });
 
-app.get('/*', (req, res) => {
-  var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  console.log('requested URL', fullUrl);
-  res.sendFile(
-    path.join(__dirname + '/Client/womens-gear-trade/build/index.html')
-  );
-});
+// app.get('/static/*', (req, res) => {
+//   var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+//   // console.log('requested static URL', fullUrl);
+//   console.log('requested original URL', req.originalUrl);
+//   console.log(
+//     'client file',
+//     path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
+//   );
+
+//   res.sendFile(
+//     path.join(__dirname, '/Client/womens-gear-trade/build/', req.originalUrl)
+//   );
+// });
+
+// app.get('/*', (req, res) => {
+//   var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+//   console.log('requested URL', fullUrl);
+//   res.sendFile(
+//     path.join(__dirname + '/Client/womens-gear-trade/build/index.html')
+//   );
+// });
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(
