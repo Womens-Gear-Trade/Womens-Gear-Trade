@@ -1,4 +1,4 @@
-const BASE_API = `/api`;
+const BASE_API = `https://womens-gear-trade.herokuapp.com/api`;
 console.log('this is base api', BASE_API);
 
 export const authenticateUser = async (
