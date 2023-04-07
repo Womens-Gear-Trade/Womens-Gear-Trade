@@ -1,13 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../CSS/nav.css';
+import logo from '../assets/logoCircle.png';
 
 const Navbar = () => {
   return (
     <div id='is-sticky'>
       <header>
         <nav className='navbar-content'>
-          <div className='logo'>Women's Gear Trade</div>
+          <div className='logo'>
+            <img
+              id='logoPic'
+              src={logo}
+              alt='logo'
+            ></img>
+          </div>
           <div className='nav-links'>
             <NavLink
               to='/'

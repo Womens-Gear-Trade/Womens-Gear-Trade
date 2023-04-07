@@ -28,6 +28,14 @@
 #img-block {
   width: 100%;
 }
+
+#welcomeChunk {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2%;
+  align-items: center;
+  margin-left: 4%;
+}
 #welcome-blockimg {
   width: 100%;
   box-shadow: 0 0 1em rgb(158, 159, 166);
@@ -161,7 +169,12 @@
 }
 
 /* ************ SINGLE WORDS *********** */
-#women-word {
+#bigHead {
+  font-size: 40pt;
+  color: black;
+}
+
+#welcome-word {
   color: orange;
 }
 
@@ -189,30 +202,29 @@
   color: rgb(237, 125, 64);
 }
 
-
 /* ~~~~~~~ INIT. BTN ~~~~~~~ */
-#whowhy-link{
+#whowhy-link {
   text-decoration: none;
 }
-.btn {    
-  position: relative; 
+.btn {
+  position: relative;
   /* padding: 1.4rem 4.2rem;
   padding-right: 3.1rem; */
- 
+
   padding: 2rem;
   padding-left: 3rem;
   font-size: 15px;
   color: black;
   text-transform: uppercase;
-  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);  
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
   cursor: pointer;
   user-select: none;
-  
 }
 
-.btn:before, .btn:after {
+.btn:before,
+.btn:after {
   content: '';
-  position: absolute; 
+  position: absolute;
   transition: inherit;
   z-index: -1;
 }
@@ -220,7 +232,7 @@
 .btn:hover {
   color: white;
   font-weight: bolder;
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 
 .btn:hover:before {
@@ -228,13 +240,13 @@
 }
 
 .btn:hover:after {
-  background-image: linear-gradient(-25deg, #F9D976 0%, #f39f86 100%);
-  transition-delay: .35s;
+  background-image: linear-gradient(-25deg, #f9d976 0%, #f39f86 100%);
+  transition-delay: 0.35s;
   padding-bottom: 1.5%;
 }
 /* From Left */
 
-.from-left:before, 
+.from-left:before,
 .from-left:after {
   top: 0;
   width: 0;
@@ -243,14 +255,13 @@
 
 .from-left:before {
   right: 0;
-  border:2.5px solid #f39f86;
+  border: 2.5px solid #f39f86;
   border-left: 0;
-  border-right: 0;  
+  border-right: 0;
 }
 
 .from-left:after {
   left: 0;
-  
 }
 
 .from-left:hover:before,
