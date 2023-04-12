@@ -17,7 +17,8 @@ nav {
   top: 0;
 }
 .logo {
-  padding: 2%;
+  padding: 1%;
+  padding-left: 2%;
 }
 
 #logoPic {
@@ -29,7 +30,8 @@ nav {
   /* align-items: flex-end; */
   justify-content: flex-end;
   gap: 5%;
-  padding: 2%;
+  padding: 1%;
+  padding-right: 2%;
   align-items: center;
   flex-wrap: wrap;
   width: 40%;
