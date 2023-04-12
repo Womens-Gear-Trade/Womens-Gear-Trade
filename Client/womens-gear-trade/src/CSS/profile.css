@@ -2,11 +2,69 @@
   padding: 2%;
 }
 
-.profile-content {
+.profileInfo-content {
+  padding-top: 4%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* border: black 1pt solid; */
+  gap: 2%;
   font-family: 'Sora', sans-serif;
+}
+
+#profPic {
+  width: 70%;
+  box-shadow: 0 0 1em rgb(158, 159, 166);
+}
+
+.profileBio {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  align-items: center;
+}
+
+#textarea {
+  padding: 1%;
+  padding-bottom: 4%;
+  width: 50%;
+}
+
+#profileHR {
+  margin: 4%;
+}
+
+#profNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: rgba(198, 197, 197, 0.322);
+}
+
+.profileLinks {
+  padding: 0;
+  display: flex;
+  gap: 10%;
+  list-style-type: none;
+}
+
+#profLink:hover {
+  color: rgba(0, 0, 0, 0.501);
+  cursor: pointer;
+}
+
+#createButt:hover {
+  color: rgba(0, 0, 0, 0.501);
+  cursor: pointer;
+}
+
+.optionContainer {
+  display: flex;
+  justify-content: center;
+  padding: 30%;
 }
