@@ -13,11 +13,12 @@ export default function AuthProvider({ children }) {
   // };
 
   useEffect(() => {
-    settoken(localStorage['juice-token'] || '');
+    settoken(localStorage['womensgear-token'] || '');
 
-    if (localStorage['juice-token']) {
+    if (localStorage['womensgear-token']) {
       const getMe = async () => {
-        const result = await me(localStorage['juice-token']);
+        const result = await me(localStorage['womensgear-token']);
+        console.log('thisis RESULT', result);
         setUser(result);
       };
       getMe();
@@ -27,10 +28,8 @@ export default function AuthProvider({ children }) {
   const updateAuthStatus = () => setShouldUpdate(!shouldUpdate);
 
   const logout = () => {
-    delete localStorage['juice-token'];
-    delete localStorage['bundleCost'];
-    delete localStorage['serviceCost'];
-    delete localStorage['shipping-Address'];
+    delete localStorage['womensgear-token'];
+
     updateAuthStatus();
     // redirHome();
   };

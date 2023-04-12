@@ -30,6 +30,7 @@ export const authenticateUser = async (
       } else {
         console.log('this is result.token', result.token);
         window.localStorage.setItem(`womensgear-token`, result.token);
+        // window.localStorage.setItem(`womensgear-user`, result.user);
         return await me();
       }
     } catch (error) {
