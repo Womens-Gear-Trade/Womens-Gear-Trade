@@ -11,21 +11,15 @@ import '../CSS/home.css';
 
 const Home = () => {
   return (
-    <div
-      className='home-container'
-      id='homeJump'
-    >
-      <h1 id='welcomeChunk'>
-        <div>
-          <span id='bigHead'>Women In The Wild</span>
-        </div>
-      </h1>
+    <div className='home-container' id='homeJump'>
       <div className='home-content'>
-        <div
-          className='home-block'
-          id='welcome'
-        >
+        <div className='home-block' id='welcome'>
           <div id='welcome-group1'>
+            <h1 id='welcomeChunk'>
+              <div>
+                <span id='bigHead'>Women In The Wild</span>
+              </div>
+            </h1>
             <h2 id='welcome-word'>Welcome!</h2>
             <h3>
               Helping women and non-binary individuals get the tools they need
@@ -36,11 +30,7 @@ const Home = () => {
             </Link>
           </div>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              src={welcome}
-              alt='picofpeeps'
-            ></img>
+            <img id='welcome-blockimg' src={welcome} alt='picofpeeps'></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@peterconlan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -54,16 +44,9 @@ const Home = () => {
           </div>
         </div>
         {/* ********************************************************** */}
-        <div
-          className='home-block'
-          id='who-block'
-        >
+        <div className='home-block' id='who-block'>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              alt='picofus'
-              src={whoAreWe}
-            ></img>
+            <img id='welcome-blockimg' alt='picofus' src={whoAreWe}></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/de/@fredasem?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -83,20 +66,14 @@ const Home = () => {
             </h1>
             <h3>Women rule and we are the coolest! </h3>
             <div id='readp'>
-              <Link
-                id='whowhy-link'
-                to='/about'
-              >
+              <Link id='whowhy-link' to='/about'>
                 <div className='btn from-left'>Read more about us! </div>
               </Link>
             </div>
           </div>
         </div>
         {/* ********************************************************** */}
-        <div
-          className='home-block'
-          id='gear-block'
-        >
+        <div className='home-block' id='gear-block'>
           <div id='welcome-group3'>
             <h1>
               Find your <span id='gearword'>gear!</span>
@@ -107,11 +84,7 @@ const Home = () => {
             <p>Check out the gear here</p>
           </div>
           <div id='img-block'>
-            <img
-              id='welcome-blockimg'
-              alt='picofpeeps'
-              src={gearHome}
-            ></img>
+            <img id='welcome-blockimg' alt='picofpeeps' src={gearHome}></img>
             <p className='imgref'>
               Photo by{' '}
               <a href='https://unsplash.com/@mvds?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -125,10 +98,7 @@ const Home = () => {
           </div>
         </div>
         {/* ********************************************************** */}
-        <div
-          className='home-block'
-          id='blog'
-        >
+        <div className='home-block' id='blog'>
           <div id='img-block'>
             <img
               id='welcome-blockimg'
@@ -158,10 +128,7 @@ const Home = () => {
           </div>
         </div>
         {/* ********************************************************** */}
-        <div
-          className='home-block'
-          id='connect'
-        >
+        <div className='home-block' id='connect'>
           <div id='welcome-group5'>
             <h1>
               Get <span id='connectedword'>connected!</span>
@@ -190,10 +157,7 @@ const Home = () => {
           </div>
         </div>
         {/* ********************************************************** */}
-        <div
-          className='home-block-6'
-          id='hear'
-        >
+        <div className='home-block-6' id='hear'>
           <div id='img-block'>
             <img
               id='welcome-blockimg-baby'

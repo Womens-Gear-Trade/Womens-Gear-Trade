@@ -29,8 +29,11 @@ footer {
 #logo-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10%;
   width: 70%;
+  margin-right: 25%;
 }
 
 #socials {
@@ -102,7 +105,10 @@ footer {
   border: none;
   width: 50%;
 }
-
+#logo{
+  display: flex;
+  justify-content: center;
+}
 #logoCirc {
-  width: 40%;
+  width: 80%;
 }
