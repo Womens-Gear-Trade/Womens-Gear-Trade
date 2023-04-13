@@ -11,6 +11,7 @@ import {
   Profile,
   Register,
   Footer,
+  CreateListing,
 } from './Components/index';
 
 function App() {
@@ -50,6 +51,10 @@ function App() {
         <Route
           path='/signup'
           element={<Register />}
+        ></Route>
+        <Route
+          path='/create'
+          element={<CreateListing />}
         ></Route>
       </Routes>
       <Footer />

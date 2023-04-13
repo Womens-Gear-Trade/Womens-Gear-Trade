@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../CSS/profile.css';
 import profPic from '../assets/AIProfPic.png';
 import { useAuth } from '../Custom-Hooks';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   const user = useAuth();
@@ -48,7 +49,28 @@ const Profile = () => {
             <div className='optionContainer'>ALL THE OPTIONS</div>
           </div>
         </div>
-      )}
+
+      </div>
+      <div className='profileBio'>
+        <h5>Bio:</h5>
+        <textarea id='textarea'>Tell the world about your interests!</textarea>
+      </div>
+      <hr id='profileHR'></hr>
+      <div className='profileOptions'>
+        <nav id='profNav'>
+          <ul className='profileLinks'>
+            <li id='profLink'>Inbox</li>
+            <li id='profLink'>Selling</li>
+            <li id='profLink'>Buying</li>
+            <li id='profLink'>Saved</li>
+          </ul>
+          <div id='createButt'>
+            <Link to='/create'>Create Listing</Link>
+          </div>
+        </nav>
+        <div className='optionContainer'>ALL THE OPTIONS</div>
+      </div>
+
     </div>
   );
 };
