@@ -1,7 +1,9 @@
 {
   "files": {
+
     "main.css": "/static/css/main.e197f419.css",
     "main.js": "/static/js/main.dcaca7d3.js",
+
     "static/js/787.90ff822b.chunk.js": "/static/js/787.90ff822b.chunk.js",
     "static/media/girlJumpWelcome.png": "/static/media/girlJumpWelcome.b2c545ab7baf8783cb08.png",
     "static/media/connectedLadies.png": "/static/media/connectedLadies.f94735b1f3b278a4dc52.png",
@@ -12,6 +14,7 @@
     "static/media/AIProfPic.png": "/static/media/AIProfPic.2ec9ce203fa55eba89c3.png",
     "static/media/logoCircle.png": "/static/media/logoCircle.46793a01c6faf61e3261.png",
     "index.html": "/index.html",
+
     "main.e197f419.css.map": "/static/css/main.e197f419.css.map",
     "main.dcaca7d3.js.map": "/static/js/main.dcaca7d3.js.map",
     "787.90ff822b.chunk.js.map": "/static/js/787.90ff822b.chunk.js.map"
@@ -19,5 +22,6 @@
   "entrypoints": [
     "static/css/main.e197f419.css",
     "static/js/main.dcaca7d3.js"
+
   ]
 }
