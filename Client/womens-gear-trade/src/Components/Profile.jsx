@@ -2,6 +2,7 @@ import React from 'react';
 import '../CSS/profile.css';
 import profPic from '../assets/AIProfPic.png';
 import { useAuth } from '../Custom-Hooks';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   const user = useAuth();
@@ -37,7 +38,9 @@ const Profile = () => {
             <li id='profLink'>Buying</li>
             <li id='profLink'>Saved</li>
           </ul>
-          <div id='createButt'>Create Listing</div>
+          <div id='createButt'>
+            <Link to='/create'>Create Listing</Link>
+          </div>
         </nav>
         <div className='optionContainer'>ALL THE OPTIONS</div>
       </div>

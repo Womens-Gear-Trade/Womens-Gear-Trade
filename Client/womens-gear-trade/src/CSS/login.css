@@ -34,3 +34,9 @@
   padding: 2%;
   font-size: 12pt;
 }
+
+.listingHeader {
+  font-family: 'Sora', sans-serif;
+
+  text-align: center;
+}
